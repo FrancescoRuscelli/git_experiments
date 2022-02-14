@@ -56,8 +56,9 @@ class Updater:
         #
                 if push:
                     print("pushing...")
-                    origin = repo.remote(name='origin')
-                    origin.push(tags=True)
+                    # origin = repo.remote(name='origin')
+                    # origin.push("main", new_tag)
+                    repo.git.push('origin', repo.active_branch)
                     print('done')
             else:
                 print('nothing to commit.')
